@@ -10,7 +10,8 @@ def create_results(res_path):
     file_path = res_path + '_0.csv'
     if os.path.exists(file_path) == False:
         print("File: " + file_path + " does not exist.")
-        exit()
+        
+        return None
 
 
     df = pd.read_csv(res_path + '_0.csv')
@@ -20,7 +21,8 @@ def create_results(res_path):
         file_path = res_path + f'_{i}.csv'
         if os.path.exists(file_path) == False:
             print("File: " + file_path + " does not exist.")
-            exit()
+            
+            return None
 
         df = pd.read_csv(file_path)
         df = df[['averageError']]
@@ -49,7 +51,7 @@ if __name__ == "__main__":
     data_type = args.type
     data_path = args.data
 
-    al_selection_methods = ["density", "igs", "qbc", "rt", "random"]
+    al_selection_methods = ["DAGS", "iGS", "QBC", "RT", "Random"]
 
     dataset_names = None
     dataset_to_plot_names = None
@@ -60,7 +62,7 @@ if __name__ == "__main__":
         for name in dataset_names:
             dataset_to_plot_names[name] = name
 
-        data_path = './ALresults/Real/'
+        data_path = './ALresults/Synthetic/'
 
     else:
         dataset_names = ["Forrester", "forrester_imb", "jump_forrester", "jump_forrester_imb", "gaussian", "gaussian_imb", "gaussian_imb_noise", "exponential", "exponential_imb"]
@@ -75,24 +77,15 @@ if __name__ == "__main__":
                                  "exponential"        : "Exponential", 
                                  "exponential_imb"    : "Exponential Heterogeneous"}
 
+    linestyles = ['-','--','-.',':',(0, (3, 2))]
+
     experiment_results = []
     for dataset in dataset_names:
-        for method in al_selection_methods:
-            experiment_results.append(create_results(data_path + method + '/' + dataset + '/' + dataset + '_150_' + method))
-
-
-        t_v, p_v = stat_test(experiment_results[0],experiment_results[1])
-        p_v = p_v.item()
 
         f_size = 13
         linewidth = 2.2
 
         plt.figure()
-        plt.plot(experiment_results[0], label='DAGS', linewidth=linewidth)
-        plt.plot(experiment_results[1], label='iGS', linestyle='--', linewidth=linewidth)
-        plt.plot(experiment_results[2], label='QBC', linestyle='-.', linewidth=linewidth)
-        plt.plot(experiment_results[3], label='RT',  linestyle=':', linewidth=linewidth)
-        plt.plot(experiment_results[4], label='Random', linestyle=(0, (3, 2)), linewidth=linewidth)
 
         plt.xlabel('# of Queries', fontsize=f_size)
         plt.ylabel('MAE', fontsize=f_size)
@@ -100,6 +93,17 @@ if __name__ == "__main__":
 
         plt.xticks(fontsize=f_size)
         plt.xticks(fontsize=f_size)
+
+        for i in range(len(al_selection_methods)):
+
+            method = al_selection_methods[i]
+            experiment_result = create_results(data_path + method + '/' + dataset + '/' + dataset + '_150_' + method)
+
+            if experiment_result is None:
+                continue
+
+            plt.plot(experiment_result, label=method, linestyle=linestyles[i], linewidth=linewidth)
+
 
         handles, labels = plt.gca().get_legend_handles_labels()
         plt.legend(handles, labels, fontsize=f_size)
