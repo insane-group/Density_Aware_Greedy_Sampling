@@ -94,23 +94,23 @@ class Active_Learning():
             self.logger.info(self.log_prefix, "Starting the Active Learning process.")
             for train_materials_num in range(designspace_thres - len(init_indicies)):
 
-                if method == "density":
+                if method == "DAGS":
                     dags  = Density_Aware_Greedy_Sampling(model,x_trainAll, y_trainAll,train_materials,X_featureNames,self.logger)
                     select_index = dags.get_next_index()
 
-                elif method == "igs":
+                elif method == "iGS":
                     iGS = Improved_Greedy_Sampling(model,x_trainAll, y_trainAll,train_materials,X_featureNames,self.logger)
                     select_index, dist= iGS.get_next_index()
 
-                elif method == "qbc":
+                elif method == "QBC":
                     qbc = Query_By_Commite(model,x_trainAll, y_trainAll,train_materials,X_featureNames,self.logger)
                     select_index, dist = qbc.get_next_index()
 
-                elif method == "random":
+                elif method == "Random":
                     rs = Random_Sampling(train_materials,self.logger)
                     select_index = rs.get_next_index()
 
-                elif method == "rt":
+                elif method == "RT":
                     #Compute the proportion of unlabeled MOFs and variance of true labels of MOFs in each leaf
                     RT.al_calculate_leaf_proportions() 
                     

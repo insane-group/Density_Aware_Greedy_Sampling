@@ -14,7 +14,7 @@ if __name__ == "__main__":
     #real_dataset_names = ["zifs_diffusivity", "co2", "co2/n2", "o2", "n2", "ch4", "h2", "he", "methane"]
     synthetic_dataset_names = ["Forrester", "forrester_imb", "jump_forrester", "jump_forrester_imb", "gaussian", "gaussian_imb", "gaussian_imb_noise", "exponential", "exponential_imb"]
 
-    al_selection_methods = ["density", "igs", "qbc", "rt", "random"]
+    al_selection_methods = ["DAGS", "iGS", "QBC", "RT", "Random"]
 
     al_process = Active_Learning(logger)
     XGBR = XGBRegressor(n_estimators=500, max_depth=5, eta=0.07, subsample=0.75, colsample_bytree=0.7, reg_lambda=0.4, reg_alpha=0.13,
