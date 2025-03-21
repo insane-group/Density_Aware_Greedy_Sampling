@@ -195,7 +195,7 @@ class Active_Learning():
 
     def get_synthetic_dataset(self, dataset_name):
 
-        if dataset_name == "Forrester":
+        if dataset_name == "forrester":
             self.logger.info(self.log_prefix, "Getting Forrester dataset.")
             forrester_dataset = Forrester_Dataset()
             return forrester_dataset.get_dataset()

@@ -65,7 +65,7 @@ if __name__ == "__main__":
         data_path = './ALresults/Synthetic/'
 
     else:
-        dataset_names = ["Forrester", "forrester_imb", "jump_forrester", "jump_forrester_imb", "gaussian", "gaussian_imb", "gaussian_imb_noise", "exponential", "exponential_imb"]
+        dataset_names = ["forrester", "forrester_imb", "jump_forrester", "jump_forrester_imb", "gaussian", "gaussian_imb", "gaussian_imb_noise", "exponential", "exponential_imb"]
 
         dataset_to_plot_names = {"Forrester"          : "Forrester", 
                                  "forrester_imb"      : "Forrester Heterogeneous", 

@@ -12,7 +12,7 @@ if __name__ == "__main__":
                         fileName=datetime.now().strftime('logfile_%d-%m-%Y-%H-%M-%S.%f')[:-3] + ".log")
 
     #real_dataset_names = ["zifs_diffusivity", "co2", "co2/n2", "o2", "n2", "ch4", "h2", "he", "methane"]
-    synthetic_dataset_names = ["Forrester", "forrester_imb", "jump_forrester", "jump_forrester_imb", "gaussian", "gaussian_imb", "gaussian_imb_noise", "exponential", "exponential_imb"]
+    synthetic_dataset_names = ["forrester", "forrester_imb", "jump_forrester", "jump_forrester_imb", "gaussian", "gaussian_imb", "gaussian_imb_noise", "exponential", "exponential_imb"]
 
     al_selection_methods = ["DAGS", "iGS", "QBC", "RT", "Random"]
 
