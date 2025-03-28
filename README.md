@@ -23,9 +23,9 @@ For the implementation of the code we have used *mamba* as our package manager ,
 - **Conda:**   https://docs.conda.io/en/latest/
 - **Mamba:** https://github.com/mamba-org/mamba
 
-After installing your selected package manager you can run the ***env_setup.sh*** bash script contained in the repo. This should create a mamba/conda environment containing all the necessary libraries for our code.
+After installing your selected package manager you can run the ***env_setup.sh*** bash script contained in the repo. This should create a mamba/conda environment containing all the necessary libraries to execute our code.
 
-The bash script expects two command line arguments. The first one is the name that you want to give to the created environment and the second is whether you are using mamba or conda. So a typical run of the script should look like this:
+The bash script expects two command line arguments. The first one is the name that you want to give to the new environment and the second is whether you are using mamba or conda. So a typical run of the script should look like this:
 
 ```bash
 ./env_setup.sh test_environment mamba
