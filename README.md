@@ -61,13 +61,12 @@ If you want to contact us you can reach as at the emails of the authors as menti
 
 ## Contributors
 
-Vassilis Gkatsis [<img src="https://github.com/vGkatsis.png" width="60px;"/><br /><sub><ahref= "https://github.com/vGkatsis">vGkatsis</a></sub>]
+ [<img src="https://github.com/vGkatsis.png"  style="border-radius: 50%; border: 1px solid #ccc; width: 60px; height=60px;" /><br /><sub><ahref= "https://github.com/vGkatsis">Vassilis Gkatsis</a></sub>]
 
-Petros Maratos [<img src="https://github.com/{{ contributor }}.png" width="60px;"/><br /><sub><ahref="https://github.com/{{ contributor }}">{{ contributor }}</a></sub>](https://github.com/{{ contributor }}/{{ repository }}
+[<img src="https://github.com/PMaratos.png" style="border-radius: 50%; border: 1px solid #ccc; width: 60px; height=60px;"/><br /><sub><ahref= "https://github.com/PMaratos">Petros Maratos</a></sub>]
 
 
 
 ## Acknowledgments
 
-- Inspiration or references
 - Any contributors
