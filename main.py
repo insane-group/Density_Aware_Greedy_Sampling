@@ -44,7 +44,7 @@ if __name__ == "__main__":
         selected_datasets = synthetic_dataset_names
 
     else:
-        dataset = [dataset]
+        selected_datasets = [dataset]
 
     selection_methods_map = {"dags"  :  "DAGS",
                              "igs"   :  "iGS",
