@@ -43,7 +43,7 @@ As our package manager we have used (and recommend to use) mamba, but conda shou
 
 
 
-## 🧪 Running Tests
+## Running Tests
 
 
 
@@ -61,9 +61,11 @@ If you want to contact us you can reach as at the emails of the authors as menti
 
 ## Contributors
 
- <a href= "https://github.com/vGkatsis"><img src="https://github.com/vGkatsis.png"  style="border-radius: 30px; border: 1px solid #ccc; width: 60px; height=60px;" /></a> Vassilis Gkatsis<br />
+ <a href= "https://github.com/vGkatsis">Vassilis Gkatsis </a> <br />
 
- <a href= "https://github.com/PMaratos"><img src="https://github.com/PMaratos.png"  style="border-radius: 30px; border: 1px solid #ccc; width: 60px; height=60px;" /> </a> Petros Maratos<br />
+ <a href= "https://github.com/PMaratos">Petros Maratos</a> <br />
+
+
 
 ## Acknowledgments
 
