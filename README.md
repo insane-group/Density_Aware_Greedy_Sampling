@@ -18,16 +18,26 @@ In this work, we introduce Density-Aware Greedy Sampling AL (*DAGS-AL*), an acti
 
 ## Configuration
 
-We provide a *requirements.txt* file containing the python libraries required to run our experiments.
-
-As our package manager we have used (and recommend to use) mamba, but conda should work fine as well. For specific instructions on installing these package managers please refer to the following links:
+For the implementation of the code we have used *mamba* as our package manager , but *conda* should work fine as well. For specific instructions on installing these package managers please refer to the following links:
 
 - **Conda:**   https://docs.conda.io/en/latest/
 - **Mamba:** https://github.com/mamba-org/mamba
 
+After installing your selected package manager you can run the ***env_setup.sh*** bash script contained in the repo. This should create a mamba/conda environment containing all the necessary libraries for our code.
 
+The bash script expects two command line arguments. The first one is the name that you want to give to the created environment and the second is whether you are using mamba or conda. So a typical run of the script should look like this:
 
+```bash
+./env_setup.sh test_environment mamba
+```
 
+After the script has finished just activate the environment by running
+
+```bash
+mamba activate test_environment
+```
+
+and then you are ready to execute the python file.
 
 ## Usage
 
