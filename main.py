@@ -28,7 +28,7 @@ if __name__ == "__main__":
     dataset           = parsed_args.dataset
     data_path         = parsed_args.path
     save_path         = parsed_args.save
-    iterations        = parsed_args.iter
+    iterations        = int(parsed_args.iter)
 
     logger = Logger(name = 'dags-al_logger', level=logging.DEBUG, output="filestream",
                         fileName=datetime.now().strftime('logfile_%d-%m-%Y-%H-%M-%S.%f')[:-3] + ".log")
