@@ -31,7 +31,6 @@ class Active_Learning():
         material_names              = []
         material_target             = []
         mae_per_train_size          = {}
-        # best_perform_materials          = {}
 
         i = 0
         self.logger.info(self.log_prefix, "Starting K-Fold process.")
@@ -151,10 +150,6 @@ class Active_Learning():
 
                 uniqe_current_data = current_data_points.type.unique()
                 trainLength = len(uniqe_current_data)
-
-                # if (train_materials_num + 1) not in best_perform_materials.keys():
-                #         best_perform_materials[(train_materials_num + 1)] = []                
-                # best_perform_materials[(train_materials_num + 1)].append(selected_materials)
 
                 if(trainLength>=5):
 
