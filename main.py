@@ -16,8 +16,9 @@ if __name__ == "__main__":
                                                                                                        jump_forrester, jump_forrester_imb, 
                                                                                                        gaussian, gaussian_imb, 
                                                                                                        exponential, exponential_imb, or all_synthetic. \n
-                                                                For real datasets you can select: zifs_diffusivity, co2, co2/n2, o2, n2, ch4, h2, he, methane or all_real.
+                                                                For real datasets you can select: zifs_diffusivity, co2, co2/n2, o2, n2, ch4, h2, he, methane.
                                                              """,                                                                                         default="all_synthetic")
+    parser.add_argument('-p',   '--path',               help='Define the path to the selected real dataset.',                                             default=None)
     parser.add_argument('-s',   '--save',               help='Define the path to save the results.',                                                      default="./ALresults")
     parser.add_argument('-i',   '--iter',               help='Define the number of experiments to perform.',                                              default=10)
     
@@ -25,9 +26,9 @@ if __name__ == "__main__":
 
     selection_method  = parsed_args.method
     dataset           = parsed_args.dataset
+    data_path         = parsed_args.path
     save_path         = parsed_args.save
     iterations        = parsed_args.iter
-
 
     logger = Logger(name = 'dags-al_logger', level=logging.DEBUG, output="filestream",
                         fileName=datetime.now().strftime('logfile_%d-%m-%Y-%H-%M-%S.%f')[:-3] + ".log")
@@ -35,16 +36,27 @@ if __name__ == "__main__":
     real_dataset_names      = ["zifs_diffusivity", "co2", "co2/n2", "o2", "n2", "ch4", "h2", "he", "methane"]
     synthetic_dataset_names = ["forrester", "forrester_imb", "jump_forrester", "jump_forrester_imb", "gaussian", "gaussian_imb", "gaussian_imb_noise", "exponential", "exponential_imb"]
 
-    if dataset == "all_real":
-        save_path         = os.path.join(save_path, "Real")
-        selected_datasets = real_dataset_names
-    
-    elif dataset == "all_synthetic":
-        save_path         = os.path.join(save_path, "Synthetic")
+
+    save_path  = os.path.join(save_path, "Synthetic")
+    if dataset == "all_synthetic":
         selected_datasets = synthetic_dataset_names
 
-    else:
+    elif dataset in synthetic_dataset_names:
         selected_datasets = [dataset]
+
+    elif dataset in real_dataset_names:
+
+        if data_path is None:
+            logger.error("Please provide the path to the selected real dataset.")
+            print("Please provide the path to the selected real dataset.")
+            exit()
+
+        save_path         = os.path.join(save_path, "Real")
+        selected_datasets = [dataset]
+    else:
+        logger.error("Selected dataset is not valid.")
+        print("Selected dataset is not valid.")
+        exit()
 
     selection_methods_map = {"dags"  :  "DAGS",
                              "igs"   :  "iGS",
@@ -71,7 +83,7 @@ if __name__ == "__main__":
                 file_path      = os.path.join(curr_save_path, file_name)
 
                 if dataset in real_dataset_names:
-                    data, feature_names, target_names = al_process.get_real_dataset(dataset)
+                    data, feature_names, target_names = al_process.get_real_dataset(dataset, data_path)
                 
                 else:
                     data, feature_names, target_names = al_process.get_synthetic_dataset(dataset)
