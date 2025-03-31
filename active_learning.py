@@ -137,7 +137,7 @@ class Active_Learning():
                 material_target.append(selected_materials[Y_featureNames])
                 
                 # Remove the sellected material from the list of available for training
-                if method != "rt":
+                if method != "RT":
                     train_materials = train_materials[(train_materials['type']) != selected_name]
                     train_material_names = np.delete(train_material_names, np.where(train_material_names == selected_name))
                 
