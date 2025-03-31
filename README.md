@@ -54,7 +54,7 @@ Below you will see a series of parameters of the experiments that are configurab
 |                  |     CLI Arguments     |                       Possible Inputs                        | Default Inputs |
 | ---------------- | :-------------------: | :----------------------------------------------------------: | :------------: |
 | Selection Method | -m or <br />--method  |               dags, igs, qbc, rt, random, all                |      all       |
-| Dataset          | -d or<br /> --dataset | "forrester", "forrester_imb", "jump_forrester", "jump_forrester_imb", "gaussian", "gaussian_imb", "gaussian_imb_noise", "exponential", "exponential_imb", "all_synthetic"<br />"zifs_diffusivity", "co2", "co2/n2", "o2", "n2", "ch4", "h2", "he", "methane, "all_real" | all_synthetic  |
+| Dataset          | -d or<br /> --dataset | "forrester", "forrester_imb", "jump_forrester", "jump_forrester_imb", "gaussian", "gaussian_imb", "gaussian_imb_noise", "exponential", "exponential_imb", "all_synthetic"<br />"zifs_diffusivity", "co2", "co2/n2", "o2", "n2", "ch4", "h2", "he", "methane | all_synthetic  |
 | Iterations       |     -i or --iter      |                              -                               |       10       |
 | Save File Path   |     -s or --save      |                              -                               |  ./ALresults   |
 
