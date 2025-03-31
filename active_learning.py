@@ -76,7 +76,7 @@ class Active_Learning():
 
             model.fit(x_trainAll, y_trainAll.ravel())  
 
-            if method == "rt":
+            if method == "RT":
                 # Set-up the class Regression_Tree for Active Learning
                 self.logger.info(self.log_prefix, "Setting up the Regression Tree method.")
                 RT = Regression_Tree(self.logger, seed=seedno,min_samples_leaf = 2)
