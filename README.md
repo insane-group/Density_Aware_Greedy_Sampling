@@ -60,6 +60,26 @@ Below you will see a series of parameters of the experiments that are configurab
 
 
 
+## Data
+
+You can find and download the files containing the real datasets on these links:
+
+[O2 and N2](https://github.com/ibarisorhan/MOF-O2N2/blob/main/mofScripts/MOFdata.csv)
+
+[CH4, H2, He](https://github.com/hdaglar/MOF-basedMMMs_ML/blob/main/rawdata.zip)
+
+Save them in a directory, and remember to use the file path (-p) argument when running the program.
+
+e.g.
+
+```bash
+python ./main.py -d o2 -p ./<data_directory>/MOFdata.csv
+```
+
+For synthetic datasets you do not need to download anything. The code creates the data.
+
+
+
 ## License
 
 This project is licensed under the Apache 2 license. See `LICENSE` for details.
