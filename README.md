@@ -4,7 +4,7 @@
 
 ## About The Project
 
-This github repo accompanies the paper *A Data Lean Active Learning Architecture for MOF Design Space Exploration by providing the code used for the implementation of Density-Aware Greedy Smpling  method and the described experiments.
+This github repo accompanies the paper *A Data Lean Active Learning Architecture for MOF Design Space Exploration* by providing the code used for the implementation of Density-Aware Greedy Smpling  method and the described experiments.
 
 
 
